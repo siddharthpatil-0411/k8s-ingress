@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   rules:
-  - host: mobile.com
+  - host: localhost
     http:
       paths:
       - path: /mobile
@@ -15,9 +15,6 @@ spec:
             name: mobile-app
             port:
               number: 80
-  - host: mobile.com
-    http:
-      paths:
       - path: /search
         pathType: Prefix
         backend:
