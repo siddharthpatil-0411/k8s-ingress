@@ -1,0 +1,27 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress
+  namespace: default
+spec:
+  rules:
+  - host: mobile.com
+    http:
+      paths:
+      - path: /mobile
+        pathType: Prefix
+        backend:
+          service:
+            name: mobile-app
+            port:
+              number: 80
+  - host: mobile.com
+    http:
+      paths:
+      - path: /search
+        pathType: Prefix
+        backend:
+          service:
+            name: search-app
+            port:
+              number: 80
